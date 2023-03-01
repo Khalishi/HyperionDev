@@ -12,6 +12,8 @@
 
 ``` cp .env.example .env```
 
+```php artisan key:generate```
+
 Please update your database details on ```.env``` file
 
 ``` php artisan migrate```
