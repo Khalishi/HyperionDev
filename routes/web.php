@@ -20,7 +20,11 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/auth.php';
 
-Route::get('/customers', ManageCustomersController::class)->name('customers');
-Route::get('/invoices/{customerId}', ManageInvoicesController::class)->name('customer.invoices');
-Route::get('/invoice/{invoice}/edit', ManageInvoiceLinesController::class)->name('customer.invoice.lines');
-Route::get('/payments/{customerId}', ManagePaymentsController::class)->name('customer.payments');
+Route::middleware('auth')->group(function () {
+    Route::get('/customers', ManageCustomersController::class)->name('customers');
+    Route::get('/invoices/{customerId}', ManageInvoicesController::class)->name('customer.invoices');
+    Route::get('/invoice/{invoice}/edit', ManageInvoiceLinesController::class)->name('customer.invoice.lines');
+    Route::get('/payments/{customerId}', ManagePaymentsController::class)->name('customer.payments');
+
+
+});
