@@ -120,6 +120,7 @@
     </div>
 
     <form wire:submit.prevent="{{ $customerBeingEdited ? 'updateCustomer' : 'createCustomer'  }}">
+        @csrf
         <x-dialog-modal wire:model="showingCreatingForm">
             <x-slot name="title">
                 {{ $customerBeingEdited ? 'Edit ' : 'Create '  }} Customer
@@ -132,9 +133,10 @@
                     <x-input-error for="name" class="mt-2" />
                 </div>
                 <div class="mt-3">
-                    <x-label for="username" value="Username" />
+                    <x-label for="username" value="Username" autocomplete="off" />
                     <x-input id="username" type="text" class="mt-1 block w-full" wire:model.defer="state.username" />
                     <x-input-error for="username" class="mt-2" />
+                    
                 </div>
                 <div class="mt-3">
                     <x-label for="address" value="Address" />
