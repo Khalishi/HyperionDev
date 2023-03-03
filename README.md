@@ -4,9 +4,9 @@
 
 # Instructions
 
-```git clone https://github.com/fhulufhelo/axxess.git```
+```git clone https://github.com/Khalishi/HyperionDev.git```
 
-```cd axxess```
+```cd HyperionDev```
 
 ``` composer install```
 
@@ -26,7 +26,7 @@ add a login user with the following commands
 
 ``` php artisan tinker```
 
-``` App\Models\Operator::create(["name"=> "Fhulufhelo","username"=>"fhulu","password"=>bcrypt("123456")]);```
+``` App\Models\Operator::create(["name"=> "Khalishi","username"=>"Thanyani","password"=>bcrypt("42742")]);```
 
 exist tinker  ``` exist```
 
